@@ -1,0 +1,15 @@
+---
+
+- hosts: k3s_nodes
+  vars:
+    molecule_is_test: true
+    k3s_etcd_datastore: true
+    k3s_use_experimental: true
+  pre_tasks:
+    - name: Set node0 be a control node
+      set_fact:
+        k3s_control_node: true
+      when: inventory_hostname in ['node0','node1','node2']
+  roles:
+    - role: xanmanning.k3s
+

@@ -1,0 +1,27 @@
+---
+all:
+  vars:
+    ansible_become: true
+    k3s_release_version: v1.19.4+k3s1
+    ansible_user: ubuntu
+
+k3s_nodes:
+  hosts:
+    node0:
+      ansible_host: 31.28.88.125
+      k3s_node_external_address: 31.28.88.125
+      k3s_node_ip_address: 192.168.1.50
+    node1:
+      ansible_host: 31.28.88.126
+      k3s_node_external_address: 31.28.88.126
+      k3s_node_ip_address: 192.168.1.51
+    node2:
+      ansible_host: 31.28.88.127
+      k3s_node_external_address: 31.28.88.127
+      k3s_node_ip_address: 192.168.1.52
+    node3:
+      ansible_host: 31.28.88.128
+      k3s_node_external_address: 31.28.88.128
+      k3s_node_ip_address: 192.168.1.53
+
+
